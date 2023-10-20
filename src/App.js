@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import RecipeCreate from "./RecipeCreate";
+import RecipeList from "./RecipeList";
+import RecipeData from "./RecipeData"
 
 function App() {
+  const [recipes, setRecipes] = useState([...RecipeData]);
+  const reDex = (posts) => {
+    const reDexPosts = posts.map((recipe, index) => {
+      return {...recipe, index:index};
+    });
+    setRecipes(reDexPosts);
+  }
+
+  // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
+  // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
+
+  const handleCreate = (event, formData) => {
+    setRecipes([...recipes, formData]);
+    console.log(recipes);
+    reDex(recipes);
+  };
+
+  const handleDel = (delEntry) => {
+    console.log(delEntry)
+    //setRecipes(newDex.filter(rec=> delEntry !== rec.index))
+    //console.log(recipes)
+    setRecipes([...recipes.slice(delEntry,delEntry+1 )]);
+    console.log(recipes.slice(delEntry,delEntry+1))
+  };
+  console.log(recipes)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header><h1>Delicious Food Recipes</h1></header>
+      <RecipeList recipes={recipes} reDex={reDex} handleDel={handleDel}/>
+      <RecipeCreate recipes={recipes} handleCreate={handleCreate}/>
     </div>
   );
 }
