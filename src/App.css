@@ -4,6 +4,7 @@
   padding: 1em;
 }
 
+
 label {
   display: inline-block;
   width: 100px;
@@ -15,8 +16,13 @@ header {
 
 /* typography */
 
+h1 {
+  font-size: 64px;
+  text-align: center;
+}
+
 html {
-  font-family: 'helvetica neue', sans-serif;
+  font-family: 'Playfair Display SC','helvetica neue', sans-serif;
 }
 
 thead th, tfoot th {
@@ -37,6 +43,12 @@ td {
   text-align: center;
 }
 
+img {
+  object-fit: scale-down;
+  height: 100%;
+  width: 100%;
+}
+
 /* table */
 
 table {
@@ -54,7 +66,24 @@ table {
   text-overflow: ellipsis;
 }
 
+tbody tr:nth-child(odd) {
+  background-color: lightgoldenrodyellow;
+}
 /* Column Size for thead */
 
+th {
+  width: 10%;
+}
+
+th:nth-child(4),
+th:nth-child(5) {
+  width: 30%;
+}
 
 /* Column size for tbody */
+
+
+
+
+
+
