@@ -19,7 +19,7 @@ function RecipeList({recipes, reDex, handleDel}) {
         <td><img src={recipe.photo} alt=''/></td>
         <td>{recipe.ingredients}</td>
         <td>{recipe.preparation}</td>
-        <td><button onClick={handleDelete}>{indy}</button></td>
+        <td><button name='delete' onClick={handleDelete}>Delete</button></td>
       </tr>
     )
   });
