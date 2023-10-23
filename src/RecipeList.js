@@ -7,19 +7,19 @@ function RecipeList({recipes, reDex, handleDel}) {
   // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
   const handleDelete = (event) => {
     const index = event.target.parentNode.parentNode.id;
+    console.log(index);
     handleDel(index);
-    reDex(recipes);
   };
 
-  const eachEntry = recipes.map((recipe, index) => {
+  const eachEntry = recipes.map((recipe, indy) => {
     return (
-      <tr id={index}>
+      <tr id={indy}>
         <td>{recipe.name}</td>
         <td>{recipe.cuisine}</td>
         <td><img src={recipe.photo} alt=''/></td>
         <td>{recipe.ingredients}</td>
         <td>{recipe.preparation}</td>
-        <td><button onClick={handleDelete}>Delete</button></td>
+        <td><button onClick={handleDelete}>{indy}</button></td>
       </tr>
     )
   });
@@ -35,7 +35,7 @@ function RecipeList({recipes, reDex, handleDel}) {
             <th>Photo</th>
             <th>Ingredients</th>
             <th>Preparation</th>
-            <th></th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
