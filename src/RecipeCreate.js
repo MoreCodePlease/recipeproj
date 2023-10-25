@@ -37,7 +37,7 @@ function RecipeCreate({recipes, handleCreate}) {
                     onChange={handleChange}
                     value={formData.name}
                     placeholder="Name"
-                    required='true'
+                    required={true}
                 />
             </td>
             <td>
@@ -48,7 +48,7 @@ function RecipeCreate({recipes, handleCreate}) {
                     onChange={handleChange}
                     value={formData.cuisine}
                     placeholder="Cuisine"
-                    required='true'
+                    required={true}
               />
             </td>
             <td>
@@ -59,7 +59,7 @@ function RecipeCreate({recipes, handleCreate}) {
                     onChange={handleChange}
                     value={formData.photo}
                     placeholder="URL"
-                    required='true'
+                    required={true}
             /></td>
             <td>
               <textarea
@@ -69,7 +69,7 @@ function RecipeCreate({recipes, handleCreate}) {
                     onChange={handleChange}
                     value={formData.ingredients}
                     placeholder="Ingredients"
-                    required='true'
+                    required={true}
               />
             </td>
             <td>
@@ -80,7 +80,7 @@ function RecipeCreate({recipes, handleCreate}) {
                     onChange={handleChange}
                     value={formData.preparation}
                     placeholder="Preparation"
-                    required='true'
+                    required={true}
               />
             </td>
             <td>

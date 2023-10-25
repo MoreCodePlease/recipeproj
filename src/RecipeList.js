@@ -6,20 +6,20 @@ function RecipeList({recipes, reDex, handleDel}) {
   // TODO: Create at least one additional component that is used by this component.
   // TODO: Each recipe row must have a delete button - <button name="delete">Delete</button> - that deletes the post when clicked
   const handleDelete = (event) => {
-    const index = event.target.parentNode.parentNode.id;
+    const index = event.target.id;
     console.log(index);
     handleDel(index);
   };
 
   const eachEntry = recipes.map((recipe, indy) => {
     return (
-      <tr id={indy}>
+      <tr key={indy}>
         <td>{recipe.name}</td>
         <td>{recipe.cuisine}</td>
         <td><img src={recipe.photo} alt=''/></td>
         <td>{recipe.ingredients}</td>
         <td>{recipe.preparation}</td>
-        <td><button name='delete' onClick={handleDelete}>Delete</button></td>
+        <td><button id={indy} name='delete' onClick={handleDelete}>Delete</button></td>
       </tr>
     )
   });
